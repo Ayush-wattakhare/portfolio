@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Cpu, Globe, Wrench, Heart, Award, Star } from "lucide-react";
-import { FaJs, FaPython, FaJava, FaDatabase, FaGithub, FaHtml5, FaServer, FaAndroid, FaGitAlt, FaReact } from 'react-icons/fa';
+import { FaJs, FaPython, FaJava, FaGithub, FaHtml5, FaServer, FaAndroid, FaGitAlt, FaReact } from 'react-icons/fa';
 import { SiMongodb, SiSpringboot, SiExpress, SiMysql } from 'react-icons/si';
 import "./Skills.css";
 
