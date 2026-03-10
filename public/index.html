@@ -29,6 +29,39 @@
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- ===== Structured Data (JSON-LD) ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ayush Wattakhare",
+      "url": "https://portfolio-chi-topaz-70.vercel.app",
+      "image": "https://portfolio-chi-topaz-70.vercel.app/profile.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/ayush-wattakhare-pw2001",
+        "https://github.com/Ayush-wattakhare"
+      ],
+      "jobTitle": "Full Stack Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Savitribai Phule Pune University"
+        }
+      ],
+      "knowsAbout": ["JavaScript", "React.js", "Node.js", "Java", "Spring Boot", "Python", "MERN Stack"],
+      "email": "Avattakhare@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pune",
+        "addressCountry": "India"
+      }
+    }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

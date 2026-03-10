@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ayush Wattakhare",
+  "name": "Ayush Wattakhare - Full Stack Developer Portfolio",
+  "description": "Full Stack Developer specializing in MERN Stack, Java, Spring Boot, and Python",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0a0f1e",
+  "background_color": "#0a0f1e"
 }
