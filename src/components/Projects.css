@@ -1,0 +1,211 @@
+.projects-section {
+  background: var(--bg-primary);
+}
+
+/* Filters */
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 4.8rem;
+}
+
+.filter-chip {
+  padding: 0.6rem 1.6rem;
+  border-radius: 100px;
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 1.35rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.filter-chip:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  background: rgba(99,102,241,0.08);
+}
+
+.active-chip {
+  background: rgba(99,102,241,0.15);
+  border-color: rgba(99,102,241,0.5);
+  color: var(--primary-light);
+}
+
+/* Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(36rem, 1fr));
+  gap: 2.4rem;
+  margin-bottom: 4rem;
+}
+
+/* Card */
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2.8rem;
+  overflow: hidden;
+  cursor: default;
+}
+
+/* Color accents per project */
+.project-color-indigo { border-color: rgba(99,102,241,0.2); }
+.project-color-cyan   { border-color: rgba(6,182,212,0.2); }
+.project-color-purple { border-color: rgba(168,85,247,0.2); }
+
+.project-color-indigo:hover { border-color: rgba(99,102,241,0.5); }
+.project-color-cyan:hover   { border-color: rgba(6,182,212,0.4); }
+.project-color-purple:hover { border-color: rgba(168,85,247,0.5); }
+
+/* Glow on hover */
+.pc-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.project-color-indigo .pc-glow { background: radial-gradient(circle at 50% 0%, rgba(99,102,241,0.12), transparent 70%); }
+.project-color-cyan   .pc-glow { background: radial-gradient(circle at 50% 0%, rgba(6,182,212,0.10), transparent 70%); }
+.project-color-purple .pc-glow { background: radial-gradient(circle at 50% 0%, rgba(168,85,247,0.12), transparent 70%); }
+
+.project-hovered .pc-glow {
+  opacity: 1;
+}
+
+/* Card Content */
+.pc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pc-icon {
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.pc-period {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.pc-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.pc-subtitle {
+  font-size: 1.35rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.pc-desc {
+  font-size: 1.45rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Highlights */
+.pc-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.pc-highlights li {
+  font-size: 1.35rem;
+  color: var(--text-secondary);
+  padding-left: 1.4rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.pc-highlights li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary-light);
+  font-size: 1.1rem;
+}
+
+.project-color-cyan   .pc-highlights li::before { color: var(--accent); }
+.project-color-purple .pc-highlights li::before { color: var(--accent-2); }
+
+/* Tags */
+.pc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Actions */
+.pc-actions {
+  display: flex;
+  gap: 1rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.pc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 7px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.pc-link-github {
+  color: var(--text-secondary);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--glass-border);
+}
+
+.pc-link-github:hover {
+  color: var(--text-primary);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+}
+
+.pc-link-demo {
+  color: var(--primary-light);
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.3);
+}
+
+.pc-link-demo:hover {
+  background: rgba(99,102,241,0.2);
+  border-color: var(--primary-light);
+}
+
+/* CTA */
+.projects-cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}
