@@ -4,23 +4,23 @@ import "./About.css";
 
 const education = [
   {
-    degree: "Master in Computer Application",
+    degree: "Master of Computer Applications (MCA)",
     institution: "Savitribai Phule Pune University",
     location: "Pune, India",
-    period: "June 2023 – June 2025",
+    period: "Jun 2023 – Jun 2025",
     cgpa: "7.21 / 10",
-    major: "Computer Application & Development",
+    major: "Computer Applications & Full-Stack Development",
     coursework: ["Software Development", "Operating Systems", "Algorithms", "AI/ML"],
     color: "indigo",
   },
   {
-    degree: "Bachelor in Computer Application",
+    degree: "Bachelor of Computer Applications (BCA)",
     institution: "Rashtrasant Tukdoji Maharaj Nagpur University",
     location: "Nagpur, India",
     period: "Jul 2019 – Jul 2022",
     cgpa: "7.5 / 10",
-    major: "Computer Application & Development",
-    coursework: [],
+    major: "Computer Application & Software Design",
+    coursework: ["Data Structures", "Database Management", "Object-Oriented Programming"],
     color: "cyan",
   },
 ];
@@ -28,15 +28,14 @@ const education = [
 const experience = [
   {
     role: "Python Developer Intern",
-    company: "OctaNet Services Pvt Ltd",
+    company: "OctaNet Services Pvt. Ltd.",
     location: "Pune, India",
-    period: "March 2024 – April 2024",
+    period: "Mar 2024 – Apr 2024",
     description: [
-      "Participated in an industry-grade internship program focused on practical software project development.",
-      "Executed technology-driven project assignments on a weekly delivery cycle.",
-      "Developed a complete ATM system simulation program, implementing core banking logic.",
+      "Built a Python-based ATM simulation system implementing core banking logic (balance inquiry, withdrawal, deposit, PIN validation) as part of a weekly project-based training program.",
+      "Completed structured assignments covering Python fundamentals, control flow, and modular program design, reinforcing best practices in clean, maintainable code.",
     ],
-    tags: ["Python", "ATM System", "Project Development"],
+    tags: ["Python", "Banking Logic", "Modular Design", "OOP Fundamentals", "Clean Code"],
     color: "purple",
   },
 ];

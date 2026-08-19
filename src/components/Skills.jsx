@@ -1,41 +1,60 @@
 import { useEffect, useRef } from "react";
-import { Cpu, Globe, Wrench, Heart, Award, Star } from "lucide-react";
-import { FaJs, FaPython, FaJava, FaGithub, FaHtml5, FaServer, FaAndroid, FaGitAlt, FaReact } from 'react-icons/fa';
-import { SiMongodb, SiSpringboot, SiExpress, SiMysql } from 'react-icons/si';
+import { Cpu, Globe, Wrench, Heart, Award, Star, Layers } from "lucide-react";
+import { FaJs, FaPython, FaJava, FaGithub, FaServer, FaAndroid, FaGitAlt, FaReact, FaNodeJs } from 'react-icons/fa';
+import { SiMongodb, SiSpringboot, SiExpress, SiMysql, SiPostman, SiPostgresql, SiRazorpay } from 'react-icons/si';
 import "./Skills.css";
 
 const technical = [
-  { name: "JavaScript", icon: <FaJs />, color: "yellow" },
-  { name: "React.js", icon: <FaReact />, color: "cyan" },
-  { name: "Node.js / Express", icon: <SiExpress />, color: "green" },
   { name: "Java", icon: <FaJava />, color: "orange" },
-  { name: "Spring Boot", icon: <SiSpringboot />, color: "green" },
   { name: "Python", icon: <FaPython />, color: "blue" },
+  { name: "JavaScript", icon: <FaJs />, color: "yellow" },
+  { name: "SQL", icon: <SiMysql />, color: "blue" },
+  { name: "Spring Boot", icon: <SiSpringboot />, color: "green" },
+  { name: "React.js", icon: <FaReact />, color: "cyan" },
+  { name: "Node.js", icon: <FaNodeJs />, color: "green" },
+  { name: "Express.js", icon: <SiExpress />, color: "white" },
+  { name: "REST APIs", icon: <FaServer />, color: "indigo" },
+  { name: "MySQL", icon: <SiMysql />, color: "blue" },
   { name: "MongoDB", icon: <SiMongodb />, color: "green" },
-  { name: "SQL / MySQL", icon: <SiMysql />, color: "blue" },
-  { name: "HTML / CSS", icon: <FaHtml5 />, color: "orange" },
-  { name: "Android Dev", icon: <FaAndroid />, color: "green" },
-  { name: "OOP Concepts", icon: <FaServer />, color: "indigo" },
+  { name: "PostgreSQL / Supabase", icon: <SiPostgresql />, color: "cyan" },
 ];
 
 const tools = [
   { name: "Git", icon: <FaGitAlt />, color: "orange" },
   { name: "GitHub", icon: <FaGithub />, color: "white" },
+  { name: "Postman", icon: <SiPostman />, color: "orange" },
+  { name: "Razorpay API", icon: <SiRazorpay />, color: "blue" },
   { name: "Android Studio", icon: <FaAndroid />, color: "green" },
   { name: "XAMPP", icon: <FaServer />, color: "indigo" },
 ];
 
-const softSkills = ["Communication", "Problem-Solving", "Attention to Detail", "Adaptability", "Creativity", "Team Collaboration"];
+const coreConcepts = [
+  "Data Structures & Algorithms",
+  "Object-Oriented Programming (OOP)",
+  "Operating Systems",
+  "Software Development Lifecycle (SDLC)",
+  "Database Management Systems",
+  "RESTful Architecture",
+];
+
+const softSkills = [
+  "Problem-Solving",
+  "Communication",
+  "Attention to Detail",
+  "Adaptability",
+  "Team Collaboration",
+  "Quick Learner",
+];
 
 const languages = [
-  { name: "English", level: "Fluent", percent: 90 },
-  { name: "Japanese", level: "N5 Beginner", percent: 20 },
+  { name: "English", level: "Fluent", percent: 95 },
+  { name: "Japanese", level: "JLPT N5 (Beginner)", percent: 35 },
 ];
 
 const certifications = [
-  { name: "Python Development Intern", issuer: "OctaNet Services", year: "2024", icon: "🏆" },
-  { name: "GitHub Fundamentals", issuer: "Various Projects", year: "Ongoing", icon: "🎓" },
-  { name: "QA Analyst", issuer: "Training Program", year: "2023", icon: "✅" },
+  { name: "Python Developer Intern", issuer: "OctaNet Services Pvt. Ltd.", year: "2024", icon: "🏆" },
+  { name: "Full Stack Development (MERN & Java)", issuer: "Academic Projects & Training", year: "2023 – 2025", icon: "🎓" },
+  { name: "JLPT N5 Japanese Proficiency", issuer: "Language Study & EdTech", year: "2026", icon: "🎌" },
 ];
 
 const colorMap = {
@@ -69,12 +88,12 @@ export default function Skills() {
           </div>
           <h2 className="section-title">My Expertise</h2>
           <div className="gradient-line"></div>
-          <p className="section-subtitle">Technologies, tools, and soft skills I bring to the table.</p>
+          <p className="section-subtitle">Languages, frameworks, developer tools, and core computer science fundamentals.</p>
         </div>
 
         {/* Technical Skills */}
         <div className="skills-block reveal">
-          <h3 className="skills-block-title"><Cpu size={20} /> Technical Skills</h3>
+          <h3 className="skills-block-title"><Cpu size={20} /> Languages, Frameworks & Databases</h3>
           <div className="skill-icon-grid">
             {technical.map((s, i) => {
               const c = colorMap[s.color];
@@ -86,7 +105,7 @@ export default function Skills() {
                     "--skill-bg": c.bg,
                     "--skill-color": c.color,
                     "--skill-border": c.border,
-                    animationDelay: `${i * 0.05}s`,
+                    animationDelay: `${i * 0.04}s`,
                   }}
                 >
                   <div className="skill-icon-box">{s.icon}</div>
@@ -100,7 +119,7 @@ export default function Skills() {
         <div className="skills-two-col">
           {/* Tools */}
           <div className="skills-block reveal">
-            <h3 className="skills-block-title"><Wrench size={20} /> Developer Tools</h3>
+            <h3 className="skills-block-title"><Wrench size={20} /> Developer Tools & Platforms</h3>
             <div className="skill-icon-grid tool-grid">
               {tools.map((t, i) => {
                 const c = colorMap[t.color];
@@ -112,7 +131,7 @@ export default function Skills() {
                       "--skill-bg": c.bg,
                       "--skill-color": c.color,
                       "--skill-border": c.border,
-                      animationDelay: `${i * 0.07}s`,
+                      animationDelay: `${i * 0.05}s`,
                     }}
                   >
                     <div className="skill-icon-box">{t.icon}</div>
@@ -123,9 +142,23 @@ export default function Skills() {
             </div>
           </div>
 
-          {/* Languages */}
+          {/* Core Concepts */}
           <div className="skills-block reveal">
-            <h3 className="skills-block-title"><Globe size={20} /> Languages</h3>
+            <h3 className="skills-block-title"><Layers size={20} /> Core Computer Science Concepts</h3>
+            <div className="soft-skills-cloud">
+              {coreConcepts.map(c => (
+                <span key={c} className="soft-chip" style={{ borderLeft: "2px solid var(--primary-light)" }}>
+                  {c}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="skills-two-col">
+          {/* Languages & Soft Skills */}
+          <div className="skills-block reveal">
+            <h3 className="skills-block-title"><Globe size={20} /> Languages Spoken</h3>
             <div className="language-list">
               {languages.map(l => (
                 <div key={l.name} className="lang-item">
@@ -139,23 +172,22 @@ export default function Skills() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
 
-        <div className="skills-two-col">
-          {/* Soft Skills */}
-          <div className="skills-block reveal">
-            <h3 className="skills-block-title"><Heart size={20} /> Soft Skills</h3>
-            <div className="soft-skills-cloud">
-              {softSkills.map(s => (
-                <span key={s} className="soft-chip">{s}</span>
-              ))}
+            <div style={{ marginTop: "2rem" }}>
+              <h4 style={{ fontSize: "1.4rem", fontWeight: 600, color: "var(--text-secondary)", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                <Heart size={16} /> Soft Skills
+              </h4>
+              <div className="soft-skills-cloud">
+                {softSkills.map(s => (
+                  <span key={s} className="soft-chip">{s}</span>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Certifications */}
+          {/* Certifications & Milestones */}
           <div className="skills-block reveal">
-            <h3 className="skills-block-title"><Award size={20} /> Certifications</h3>
+            <h3 className="skills-block-title"><Award size={20} /> Experience & Milestones</h3>
             <div className="cert-list">
               {certifications.map(c => (
                 <div key={c.name} className="cert-item glass-card">

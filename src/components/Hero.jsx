@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, Download, ArrowRight, Code2 } from "lucide-react";
 import "./Hero.css";
 
-const roles = ["Full Stack Developer", "MERN Stack Developer", "Java Developer", "Python Developer"];
+const roles = [
+  "Full Stack Developer",
+  "MERN Stack Developer",
+  "Java & Spring Boot Developer",
+  "Python Developer",
+];
 
 export default function Hero() {
   const [text, setText] = useState("");
@@ -50,7 +55,7 @@ export default function Hero() {
           <div className="hero-content">
             <div className="hero-badge">
               <span className="badge-dot"></span>
-              <span>Open to Work</span>
+              <span>Open to Work · Seeking Software Developer Role</span>
             </div>
 
             <h1 className="hero-greeting">
@@ -64,24 +69,24 @@ export default function Hero() {
             </div>
 
             <p className="hero-desc">
-              Passionate Computer Application developer with expertise in MERN Stack, Java, and Python.
-              I craft end-to-end digital solutions that are performant, scalable, and visually compelling.
+              MCA graduate specializing in full-stack development (MERN, Java/Spring Boot) and AI integrations.
+              Experienced in building end-to-end web applications with authentication, payment gateways, and role-based access.
             </p>
 
             <div className="hero-stats">
               <div className="stat">
-                <span className="stat-num">3+</span>
+                <span className="stat-num">4+</span>
                 <span className="stat-label">Projects</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat">
                 <span className="stat-num">2</span>
-                <span className="stat-label">Degrees</span>
+                <span className="stat-label">Degrees (MCA & BCA)</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat">
                 <span className="stat-num">1+</span>
-                <span className="stat-label">Internships</span>
+                <span className="stat-label">Internship</span>
               </div>
             </div>
 
@@ -114,7 +119,6 @@ export default function Hero() {
               <a href="mailto:Avattakhare@gmail.com" className="social-btn" aria-label="Email">
                 <Mail size={18} />
               </a>
-
             </div>
           </div>
 
@@ -129,13 +133,13 @@ export default function Hero() {
               </div>
               {/* Orbit dots */}
               <div className="orbit orbit-1">
-                <div className="orbit-dot orbit-dot-java">Java</div>
+                <div className="orbit-dot orbit-dot-java">Java / Spring</div>
               </div>
               <div className="orbit orbit-2">
-                <div className="orbit-dot orbit-dot-react">React</div>
+                <div className="orbit-dot orbit-dot-react">React & Node</div>
               </div>
               <div className="orbit orbit-3">
-                <div className="orbit-dot orbit-dot-mongo">MongoDB</div>
+                <div className="orbit-dot orbit-dot-mongo">AI & Cloud</div>
               </div>
             </div>
 

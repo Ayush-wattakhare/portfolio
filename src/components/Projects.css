@@ -53,15 +53,23 @@
   padding: 2.8rem;
   overflow: hidden;
   cursor: default;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
 }
 
 /* Color accents per project */
 .project-color-indigo { border-color: rgba(99,102,241,0.2); }
 .project-color-cyan   { border-color: rgba(6,182,212,0.2); }
+.project-color-blue   { border-color: rgba(59,130,246,0.2); }
 .project-color-purple { border-color: rgba(168,85,247,0.2); }
 
 .project-color-indigo:hover { border-color: rgba(99,102,241,0.5); }
 .project-color-cyan:hover   { border-color: rgba(6,182,212,0.4); }
+.project-color-blue:hover   { border-color: rgba(59,130,246,0.45); }
 .project-color-purple:hover { border-color: rgba(168,85,247,0.5); }
 
 /* Glow on hover */
@@ -76,9 +84,10 @@
 
 .project-color-indigo .pc-glow { background: radial-gradient(circle at 50% 0%, rgba(99,102,241,0.12), transparent 70%); }
 .project-color-cyan   .pc-glow { background: radial-gradient(circle at 50% 0%, rgba(6,182,212,0.10), transparent 70%); }
+.project-color-blue   .pc-glow { background: radial-gradient(circle at 50% 0%, rgba(59,130,246,0.12), transparent 70%); }
 .project-color-purple .pc-glow { background: radial-gradient(circle at 50% 0%, rgba(168,85,247,0.12), transparent 70%); }
 
-.project-hovered .pc-glow {
+.project-card:hover .pc-glow {
   opacity: 1;
 }
 

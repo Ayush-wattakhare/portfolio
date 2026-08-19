@@ -5,50 +5,67 @@ import "./Projects.css";
 const projects = [
   {
     id: 1,
-    title: "HomelyEates",
-    subtitle: "Food Delivery Web Application",
-    description: "Full-stack food delivery platform connecting customers to home-cooked meal providers. Built with MERN stack featuring role-based authentication, vendor dashboard, and payment integration.",
+    title: "JLPT N5 Study Hub",
+    subtitle: "AI-Powered Japanese Learning Platform",
+    description: "Full-stack JLPT N5 EdTech platform featuring vocabulary drills, kanji practice, interactive flashcards, and gamified progress tracking with XP, streaks, and study analytics.",
     highlights: [
-      "Role-based auth (customer/vendor) with JWT",
-      "Vendor dashboard: add/update/delete meals & upload images",
-      "Razorpay payment gateway (online & COD)",
+      "Engineered an AI conversational tutor ('Sakura Sensei') using Google Gemini API & Web Speech API for real-time voice/text dialogue & grammar feedback.",
+      "Built automated retention system combining Twilio API & node-cron to schedule personalized SMS study reminders and motivational alerts.",
+      "Implemented secure JWT & bcryptjs auth backed by Supabase (PostgreSQL) for cloud persistence with local-state fallback.",
     ],
-    tags: ["MongoDB", "Express", "React", "Node.js", "JWT", "Razorpay"],
-    github: "https://github.com/Ayush-wattakhare/HomelyEates.git",
+    tags: ["Google Gemini API", "Node.js", "Express.js", "Supabase", "PostgreSQL", "Twilio API", "JWT", "Web Speech API"],
+    github: "https://github.com/Ayush-wattakhare/jlpt-study-hub",
+    demo: "https://jlpt-study-hub.vercel.app/",
+    period: "Apr 2026 – Apr 2026",
+    color: "cyan",
+    icon: "🌸",
+  },
+  {
+    id: 2,
+    title: "HomelyEats",
+    subtitle: "Full-Stack Food Delivery Platform (MERN)",
+    description: "Full-stack food delivery application connecting customers with home-cooked meal vendors, supporting end-to-end order flow with role-based authentication.",
+    highlights: [
+      "Role-based auth (customer/vendor) with secure JWT and session management.",
+      "Developed a vendor dashboard enabling meal creation, image upload, categorization, and inventory updates.",
+      "Integrated Razorpay payment gateway with both online and Cash-on-Delivery options for a seamless checkout experience.",
+    ],
+    tags: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "Razorpay"],
+    github: "https://github.com/Ayush-wattakhare/HomelyEates",
     demo: null,
     period: "Dec 2024 – Present",
     color: "indigo",
     icon: "🍱",
   },
   {
-    id: 2,
-    title: "Time Management System",
-    subtitle: "For Students — Python & MongoDB",
-    description: "Python-based productivity application helping students organize schedules, set reminders, track assignments, and visualize study patterns through an intuitive dashboard.",
+    id: 3,
+    title: "Time Management System for Students",
+    subtitle: "Productivity & Schedule Analytics — Python & MongoDB",
+    description: "Python application with an intuitive productivity dashboard to help students organize schedules, track assignments, and visualize study patterns.",
     highlights: [
-      "Productivity dashboard with visual study-pattern analytics",
-      "Schedule organizer and assignment tracker",
-      "Integrated notification & reminder alerts",
+      "Productivity dashboard with visual study-pattern analytics and time allocation tracking.",
+      "Schedule organizer and assignment deadline manager.",
+      "Built a notification & alert module to improve on-time task completion and eliminate missed deadlines.",
     ],
-    tags: ["Python", "MongoDB", "Dashboard", "Notifications"],
-    github: "https://github.com/Ayush-wattakhare/time-management-system-for-student.git",
+    tags: ["Python", "MongoDB", "Dashboard", "Analytics", "Alerts"],
+    github: "https://github.com/Ayush-wattakhare/time-management-system-for-student",
     demo: null,
     period: "Dec 2023 – May 2024",
-    color: "cyan",
+    color: "blue",
     icon: "⏰",
   },
   {
-    id: 3,
-    title: "College Voting System",
-    subtitle: "Event Voting — Java & Spring Boot",
-    description: "Secure Java web application managing college event elections with student registration, candidate nomination management, and a secure authentication system built on Spring Boot.",
+    id: 4,
+    title: "Voting System for College Events",
+    subtitle: "Secure Event Voting — Java & Spring Boot",
+    description: "Java & Spring Boot web application to digitize and secure college event elections with authenticated student registration and candidate nominations.",
     highlights: [
-      "Student registration & candidate nomination flow",
-      "Secure login and session management",
-      "MySQL-backed data persistence",
+      "Student registration and candidate nomination management preventing duplicate or unauthorized votes.",
+      "Secure authenticated login and session controls with role restrictions.",
+      "MySQL-backed data persistence and robust REST API architecture.",
     ],
-    tags: ["Java", "Spring Boot", "MySQL", "REST API"],
-    github: "https://github.com/Ayush-wattakhare/voting-system-for-college-event.git",
+    tags: ["Java", "Spring Boot", "MySQL", "REST API", "Security"],
+    github: "https://github.com/Ayush-wattakhare/voting-system-for-college-event",
     demo: null,
     period: "Aug 2023 – Dec 2023",
     color: "purple",
@@ -57,14 +74,23 @@ const projects = [
 ];
 
 const ALL = "All";
-const filters = [ALL, "React", "Python", "Java", "MongoDB", "Spring Boot"];
+const filters = [ALL, "AI / Gemini", "React", "Node.js", "Java", "Spring Boot", "Python", "MongoDB", "PostgreSQL"];
 
 export default function Projects() {
   const [active, setActive] = useState(ALL);
-  const [hovered, setHovered] = useState(null);
   const sectionRef = useRef(null);
 
-  const filtered = active === ALL ? projects : projects.filter(p => p.tags.some(t => t.toLowerCase() === active.toLowerCase()));
+  const filtered = active === ALL 
+    ? projects 
+    : projects.filter(p => p.tags.some(t => {
+        const tagLower = t.toLowerCase();
+        const activeLower = active.toLowerCase();
+        if (activeLower === "ai / gemini") return tagLower.includes("gemini") || tagLower.includes("ai");
+        if (activeLower === "react") return tagLower.includes("react");
+        if (activeLower === "node.js") return tagLower.includes("node");
+        if (activeLower === "postgresql") return tagLower.includes("postgres") || tagLower.includes("supabase");
+        return tagLower.includes(activeLower);
+      }));
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -108,10 +134,7 @@ export default function Projects() {
           {filtered.map((p, i) => (
             <div
               key={p.id}
-              className={`project-card glass-card reveal ${hovered === p.id ? "project-hovered" : ""} project-color-${p.color}`}
-              onMouseEnter={() => setHovered(p.id)}
-              onMouseLeave={() => setHovered(null)}
-              style={{ transitionDelay: `${i * 0.1}s` }}
+              className={`project-card glass-card project-color-${p.color}`}
             >
               {/* Card Top */}
               <div className="pc-top">

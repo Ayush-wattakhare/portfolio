@@ -11,7 +11,7 @@
   "jobTitle": "Full Stack Developer",
   "worksFor": {
     "@type": "Organization",
-    "name": "Freelance"
+    "name": "Freelance / Open to Work"
   },
   "alumniOf": [
     {
@@ -30,12 +30,18 @@
     "React.js",
     "Node.js",
     "Express.js",
-    "MongoDB",
     "Java",
     "Spring Boot",
     "Python",
-    "Full Stack Development",
-    "MERN Stack"
+    "SQL",
+    "MySQL",
+    "MongoDB",
+    "PostgreSQL",
+    "Supabase",
+    "Google Gemini API",
+    "MERN Stack",
+    "REST APIs",
+    "Data Structures & Algorithms"
   ],
   "email": "Avattakhare@gmail.com",
   "address": {

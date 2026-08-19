@@ -102,7 +102,7 @@ export default function Contact() {
           </div>
 
           {/* Right – form */}
-          <form className="contact-form glass-card reveal" ref={formRef} onSubmit={handleSubmit} noValidate>
+          <form className="contact-form glass-card" ref={formRef} onSubmit={handleSubmit} noValidate>
             <h3 className="form-title">Send a Message</h3>
 
             <div className="form-row">

@@ -30,7 +30,7 @@ export default function Footer() {
               <span>Ayush Wattakhare</span>
             </div>
             <p className="footer-tagline">
-              Full Stack Developer crafting scalable, modern web applications with the MERN stack, Java, and Python.
+              MCA graduate specializing in full-stack development (MERN, Java/Spring Boot) and AI-powered web solutions.
             </p>
             <div className="footer-socials">
               {socials.map(s => (
