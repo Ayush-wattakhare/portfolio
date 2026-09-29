@@ -66,7 +66,8 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="/resume.pdf.pdf"
+              href={`${process.env.PUBLIC_URL || ""}/resume.pdf`}
+              download="Ayush_Wattakhare_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="nav-resume-btn"

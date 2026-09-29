@@ -8,7 +8,7 @@
       "dest": "/static/$1"
     },
     {
-      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|svg|gif|json))",
+      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|svg|gif|json|pdf|txt|xml|webp|woff|woff2|ttf|map))",
       "dest": "/$1"
     },
     {

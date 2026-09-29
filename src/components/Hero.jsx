@@ -99,7 +99,8 @@ export default function Hero() {
                 <ArrowRight size={16} />
               </a>
               <a
-                href="/resume.pdf.pdf"
+                href={`${process.env.PUBLIC_URL || ""}/resume.pdf`}
+                download="Ayush_Wattakhare_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline"
